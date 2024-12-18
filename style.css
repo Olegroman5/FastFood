@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/*- Общие стили*/
+
+body {
+    margin: 0;
+    font-family: 'Roboto', serif;
+    background-color: #1C1C1C;
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+/*? В случае, если у нас будет идти параграф за параграфом */
+p+p {
+    margin-top: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    margin: 0;
+}
+
+.container {
+    box-sizing: border-box;
+    /*! Теперь ширина будет ровно 1170px, с учетом 2 padding по 15px*/
+
+    max-width: 1170px;
+    margin: 0 auto;
+    /* !Центрирование контейнера */
+    padding: 0 15px;
+
+}
+
+.btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 165px;
+    height: 49px;
+
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    /*! Для задания в большом регистре!*/
+
+    border-radius: 5px;
+    background: #F6762C;
+
+    transition: opacity 0.3s;
+    /*! Для большей плавности: задаем именно в этом: месте!*/
+}
+
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+.btn--small {
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+}
+
+/*- Шапка */
+
+.header {
+    padding: 25px 0;
+
+    z-index: 10;
+    position: relative;
+    /*! Данное свойство помогает при накладывании слоев*/
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__list {
+    display: flex;
+    gap: 28px;
+}
+
+.header__nav a {
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+
+.header__nav a.active {
+    opacity: 1;
+}
+
+.header__nav a:hover {
+    opacity: 0.9;
+}
+
+/*- Приветственная секция  */
+
+
+.welcome {
+    box-sizing: border-box;
+    /*! Чтобы также включались padding по 280px (Влезали во всю ширину экрана!)*/
+    min-height: 100vh;
+    /*! Данная секция будет занимать 100vh (всю высоту) окна браузера */
+
+    margin-top: -100px;
+    padding: 280px 0;
+    /*! Растяжение картинки с помощью padding*/
+
+    background-image: url("/images/welcome-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*! Картинка встанет на всю ширину! */
+    background-position: center;
+    /*! Центрирование картинки (по всем осям!)*/
+}
+
+
+.welcome__text {
+    width: 550px;
+}
+
+
+.welcome__subtitle {
+    margin-bottom: 7px;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+}
+
+.welcome__title {
+    font-size: 58px;
+}
+
+.welcome__desc {
+    margin: 40px 0;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+/*- Список еды*/
+
+.food-list {
+    padding: 100px 0;
+}
+
+.food-list .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px 10px;
+}
+
+
+.food-list__card {
+    width: 260px;
+
+    background: #312F30;
+    border-radius: 10px;
+
+    overflow: hidden;
+    text-align: center;
+    /*! Обрезание частей картинки, которые выходят за пределы карточки*/
+}
+
+.food-list__img {
+    width: 100%;
+    /*! Ограничение ширины картинки, (чтобы она не выходила за пределы родительского блока)*/
+    height: 175px;
+    object-fit: cover;
+    /*! Для задания пропорциональности картинки! (Ненужные края будут обрезаться!)*/
+}
+
+
+.food-list__text-wrapper {
+    padding: 30px 20px;
+}
+
+.food-list__title {
+    margin-bottom: 13px;
+    font-size: 20px;
+}
+
+
+.food-list__text {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+/*- Секция Order*/
+.order {
+    background: #312F30;
+    padding: 60px 0;
+    /*! padding задаем по самому большому элементу секции (То есть по картинке!)*/
+}
+
+.order .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-right: 90px;
+}
+
+.order__img {
+    max-width: 470px;
+}
+
+.order__text {
+    max-width: 360px;
+}
+
+.order__title {
+    margin-bottom: 25px;
+    font-size: 45px;
+}
+
+.order__desc {
+    margin-bottom: 20px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.order__price {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #F6762C;
+    font-size: 20px;
+}
+
+.order__price--old {
+    text-decoration: line-through;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+.order__price+.order__price {
+    margin-left: 5px;
+}
+
+
+.order .btn {
+    margin-top: 10px;
+}
+
+/*- Секция Product*/
+.product {
+    padding: 120px 0;
+}
+
+.product .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.product__card {
+    box-sizing: border-box;
+
+    width: 555px;
+    min-height: 300px;
+
+    padding: 60px 25px 60px 290px;
+
+    background: #3a3636;
+    /*! В случае, если не подгрузится картинка на задний фон!*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*! Иначе без этого свойства, картинка расположится в в левом верхнем углу*/
+}
+
+.product__card:nth-child(even) {
+    padding-left: 30px;
+    padding-right: 290px;
+}
+
+
+.product__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.product__desc {
+    margin-bottom: 10px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.product__price {
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: #F6762C;
+}
+
+.product__price+.product__price {
+    margin-left: 5px;
+}
+
+
+.product__price--old {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.product .btn {
+    margin-top: 10px;
+}
+
+.card-queen {
+    background-image: url("/images/product-1.jpg");
+}
+
+.card-hut {
+    background-image: url("/images/product-2.jpg");
+}
+
+.card-king {
+    background-image: url("/images/product-3.jpg");
+}
+
+.card-papa {
+    background-image: url("/images/product-4.jpg");
+}
+
+/*- Секция Feedback*/
+
+
+.feedback {
+    box-sizing: border-box;
+    padding-bottom: 200px;
+}
+
+
+.feedback .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 880px;
+}
+
+.feedback__text {
+    width: 370px;
+
+    margin: 0;
+    text-align: center;
+
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.feedback__text::before {
+    content: url("/images/icons/quote.svg");
+}
+
+.feedback__desc {
+    margin: 30px 0;
+    opacity: 0.7;
+}
+
+.feedback__author {
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.feedback__subauthor {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+
+    display: block;
+}
+
+/*- Секция Download*/
+
+.download {
+    padding: 60px 0;
+    background: #312F30;
+}
+
+.download .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.download__title {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+
+
+/*-Footer ==> Отдельная часть сайта*/
+
+
+.footer {
+    padding: 120px 0;
+}
+
+.footer a {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s;
+}
+
+
+.footer a:hover {
+    color: rgba(138, 107, 107, 0.9);
+}
+
+.footer .footer__title {
+    display: inline-block;
+    /*! Надо задать это свойство потому что, без него строчному эл. (ссылке) => нельзя давать внешний отступ (margin-bottom)*/
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.footer__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer__logo {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+.footer__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__link+.footer__link {
+    margin-top: 10px;
+}
+
+.footer__link::before {
+    width: 12px;
+    height: 12px;
+}
+
+.footer__link-mail::before {
+    content: url("/images/icons/mail.svg");
+}
+
+.footer__link-web::before {
+    content: url("/images/icons/global.svg");
+}
+
+.footer__list-item+.footer__list-item {
+    margin-top: 15px;
+}
+
+.footer__socials-link+.footer__socials-link {
+    margin-left: 7px;
+}
